@@ -11,14 +11,6 @@ This repository provides:
 - Solana tooling for program interactions and off-chain services
 - Docker Compose for easy local orchestration
 
-## Tech Stack
-
-- Frontend: Next.js (TypeScript)
-- Backend: Node.js (TypeScript), Prisma ORM
-- Smart Contracts: Hardhat (TypeScript)
-- Solana: TypeScript tooling
-- Infrastructure: Docker Compose
-
 ## Monorepo Structure
 
 ```
@@ -150,55 +142,3 @@ Pull requests are welcome. Please:
 This repository may contain proprietary components. If a license file is present, refer to it; otherwise consult the maintainers before redistribution.
 
 Smart-contract tooling and DApps to launch tokens and NFT-based fundraising campaigns for VC funds and DAOs on Solana & Ethereum. Includes launch configuration, whitelist management, vesting, and investor analytics.
-
-## Tech Stack
-- Languages: TypeScript, Solidity
-- Frontend: Next.js (React), TailwindCSS
-- Backend: Node.js, Express, REST APIs
-- Database: PostgreSQL (via Prisma ORM)
-- Web3: Solana CLI, Metaplex, ERC-20/ERC-721 smart contracts
-- Infra/DevOps: AWS EC2, S3, Docker, Nginx, GitHub Actions (CI/CD)
-- Tools: Notion (specs), Trello (task tracking)
-
-## Monorepo Structure (planned)
-```
-frontend/        # Next.js DApp (wallet connect, launch wizard, dashboards)
-backend/         # Express REST API (Prisma + PostgreSQL)
-contracts/       # Solidity (Hardhat) ERC-20 / ERC-721 contracts
-solana/          # Solana scripts and Metaplex tooling
-workers/         # Analytics/background ingestion workers
-```
-
-## Getting Started (development)
-1. Frontend
-   - Install dependencies: `cd frontend && npm install`
-   - Run dev server: `npm run dev`
-   - Open: http://localhost:3000
-
-2. Backend
-   - Create `.env` from `.env.example`
-   - Install deps: `cd backend && npm install`
-   - Start DB (Docker Compose, optional): `docker compose up -d db`
-   - Run dev: `npm run dev`
-
-3. Prisma
-   - `cd backend`
-   - `npx prisma generate`
-   - `npx prisma migrate dev`
-
-4. Contracts (Solidity)
-   - `cd contracts`
-   - `npm install`
-   - Configure `.env` with RPC and private key
-   - `npx hardhat test`
-   - `npx hardhat run scripts/deploy.ts --network goerli`
-
-5. Solana
-   - `cd solana`
-   - Ensure Solana CLI installed and configured
-   - Run example scripts in `scripts/`
-
-## Notes
-- Role-based access: admin, project owner, investor
-- Environment-based configuration for secure ops
-- Dockerized services with CI/CD
